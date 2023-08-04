@@ -82,3 +82,20 @@ function addBlog() {
     blogTitleInput.value = '';
     blogContentInput.value = '';
 }
+
+// Delete a blog
+function deleteBlog(event) {
+    const blogCard = event.target.closest('.blogCard');
+    if (!blogCard) return;
+
+    const blogTitle = blogCard.querySelector('h2').textContent;
+    if (!confirm(`Are you sure you want to delete the blog "${blogTitle}" ? `)) {
+        return;
+    }
+
+    // Delete the blog from the server (not implemented in this example)
+    console.log('Deleted blog:', blogTitle);
+
+    // Remove the blog card from the UI
+    blogCard.remove();
+}
