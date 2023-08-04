@@ -99,3 +99,22 @@ function deleteBlog(event) {
     // Remove the blog card from the UI
     blogCard.remove();
 }
+
+// Filter blogs by title or content
+function filterBlogs() {
+    const searchInput = document.getElementById('searchInput');
+    const searchText = searchInput.value.toLowerCase();
+
+    const blogCards = document.getElementsByClassName('blogCard');
+    Array.from(blogCards).forEach(blogCard => {
+        const title = blogCard.querySelector('h2').textContent.toLowerCase();
+        const content = blogCard.querySelector('p').textContent.toLowerCase();
+
+        if (title.includes(searchText) || content.includes(searchText)) {
+            blogCard.style.display = 'block';
+        } else {
+            blogCard.style.display = 'none';
+        }
+    });
+}
+
