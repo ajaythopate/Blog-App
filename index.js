@@ -4,7 +4,7 @@ function fetchBlogs() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(data => {
-            const blogesContainer = document.getElementById('blogsContainer'); 
+            const blogesContainer = document.getElementById('blogsContainer');
             blogsContainer.innerHTML = '';
 
             data.forEach(blog => {
@@ -117,4 +117,8 @@ function filterBlogs() {
         }
     });
 }
+// Event listeners
+document.getElementById('addBlogButton').addEventListener('click', addBlog);
 
+document.addEventListener('click', deleteBlog);
+document.getElementById('searchInput').addEventListener('input', filterBlogs);
