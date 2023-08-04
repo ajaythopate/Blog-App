@@ -51,4 +51,25 @@ function addBlog() {
     };
 
 
-    
+    // Send the new blog to the server (not implemented in this example)
+    console.log('New blog:', newBlog);
+
+    const blogsContainer = document.getElementById('blogsContainer');
+
+    // Create the new blog card
+    const blogCard = document.createElement('div');
+    blogCard.classList.add('blogCard');
+
+    const blogTitleElement = document.createElement('h2');
+    blogTitleElement.textContent = blogTitle;
+
+    const blogContentElement = document.createElement('p');
+    blogContentElement.textContent = blogContent;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.classList.add('deleteButton');
+
+    blogCard.appendChild(blogTitleElement);
+    blogCard.appendChild(blogContentElement);
+    blogCard.appendChild(deleteButton);
