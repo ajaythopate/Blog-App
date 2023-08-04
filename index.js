@@ -73,3 +73,12 @@ function addBlog() {
     blogCard.appendChild(blogTitleElement);
     blogCard.appendChild(blogContentElement);
     blogCard.appendChild(deleteButton);
+
+
+    // Insert the new blog card at the beginning of the container
+    blogsContainer.insertBefore(blogCard, blogsContainer.firstChild);
+
+    // Clear the input fields
+    blogTitleInput.value = '';
+    blogContentInput.value = '';
+}
