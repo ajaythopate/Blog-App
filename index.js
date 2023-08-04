@@ -30,3 +30,25 @@ function fetchBlogs() {
         });
 }
 fetchBlogs();
+
+
+// Add a new blog
+function addBlog() {
+    const blogTitleInput = document.getElementById('blogTitleInput');
+    const blogContentInput = document.getElementById('blogContentInput');
+
+    const blogTitle = blogTitleInput.value;
+    const blogContent = blogContentInput.value;
+
+    if (blogTitle.trim() === '' || blogContent.trim() === '') {
+        alert('Please enter a title and content for the blog.');
+        return;
+    }
+
+    const newBlog = {
+        title: blogTitle,
+        body: blogContent,
+    };
+
+
+    
